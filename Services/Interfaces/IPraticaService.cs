@@ -13,5 +13,6 @@ namespace GestionePraticheApiDonini.Services.Interfaces
         Task<UpdatedPraticaDTO> UpdatePratica(UpdatePraticaDTO dto);
         Task<GottenPraticaDTO> GetPratica(GetPraticaDTO dto);
         Task<DownloadedPraticaDTO> DownloadPratica(DownloadPraticaDTO dto);
+        Task<UpdatedPraticaDTO> UpdateStatus(UpdateStatusDTO dto);
     }
 }

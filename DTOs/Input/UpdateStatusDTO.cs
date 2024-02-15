@@ -5,11 +5,17 @@ using System.Threading.Tasks;
 
 namespace GestionePraticheApiDonini.DTOs.Input
 {
-    public class UpdatePraticaDTO
+    public class UpdateStatusDTO
     {
         public int PraticaId { get; set; }
-        public DateTime? BirthDate { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
+        public NewStatusDTO NewStatus { get; set; }
+    }
+
+
+    public enum NewStatusDTO
+    {
+        Processing = 1,
+        Successful,
+        Unsuccessful
     }
 }

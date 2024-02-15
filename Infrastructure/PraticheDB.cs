@@ -23,8 +23,8 @@ namespace GestionePraticheApiDonini.Infrastructure
 
         public DbSet<Pratica> Pratiche { get; set; }
 
-        // protected override void OnModelCreating(ModelBuilder modelBuilder)
-        // {
-        // }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+        }
     }
 }

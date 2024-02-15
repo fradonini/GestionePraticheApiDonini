@@ -2,13 +2,12 @@ using GestionePraticheApiDonini.DTOs.Input;
 using GestionePraticheApiDonini.DTOs.Output;
 using GestionePraticheApiDonini.Requests;
 using GestionePraticheApiDonini.Services.Interfaces;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GestionePraticheApiDonini.Controllers;
 
 [ApiController]
-[Authorize]
+// [Authorize]
 [Route("[controller]")]
 public class PraticaController : ControllerBase
 {
@@ -27,7 +26,7 @@ public class PraticaController : ControllerBase
     public async Task<IActionResult> CreatePratica([FromForm] CreatePraticaRequest model)
     {
         if (!ModelState.IsValid)
-            return BadRequest();
+            return BadRequest("Invalid request");
 
         var result = await _praticaService.CreatePratica(
             new CreatePraticaDTO()
@@ -51,7 +50,6 @@ public class PraticaController : ControllerBase
         {
             res = await _praticaService.UpdatePratica(new UpdatePraticaDTO()
             {
-                Attachment = model.Attachment,
                 Name = model.Name,
                 Surname = model.Surname,
                 BirthDate = model.BirthDate
@@ -88,5 +86,51 @@ public class PraticaController : ControllerBase
         }
 
         return File(res.DownloadedFile, "application/pdf");
+    }
+
+    [HttpGet]
+    [Route("{id}", Name = nameof(GetPratica))]
+    [ProducesResponseType(typeof(IActionResult), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetPratica([FromRoute] int id)
+    {
+        var res = new GottenPraticaDTO();
+        try
+        {
+            res = await _praticaService.GetPratica(new GetPraticaDTO()
+            {
+                PraticaId = id
+            });
+        }
+        catch (KeyNotFoundException kEx)
+        {
+            return BadRequest(kEx.Message);
+        }
+
+        return Ok(res);
+    }
+
+    [HttpPatch]
+    [Route("{id}/updateStatus", Name = nameof(UpdateStatus))]
+    [ProducesResponseType(typeof(IActionResult), StatusCodes.Status200OK)]
+    public async Task<IActionResult> UpdateStatus([FromRoute] int id, [FromBody] UpdateStatusRequest request)
+    {
+        if (!ModelState.IsValid)
+            return BadRequest("Invalid request");
+
+        var res = new UpdatedPraticaDTO();
+        try
+        {
+            res = await _praticaService.UpdateStatus(new UpdateStatusDTO()
+            {
+                PraticaId = id,
+                NewStatus = (NewStatusDTO)(int)request.NewStatus
+            });
+        }
+        catch (KeyNotFoundException kEx)
+        {
+            return BadRequest(kEx.Message);
+        }
+
+        return Ok(res);
     }
 }

@@ -27,7 +27,6 @@ namespace GestionePraticheApiDonini.Services
             var byn = FileToByte(dto.Attachment);
             var result = await _praticheDB.Pratiche.AddAsync(new Pratica()
             {
-                Id = 1,
                 Attachment = byn,
                 Status = PraticaStatus.Created,
                 CreatedDate = DateTime.Now,
@@ -35,6 +34,8 @@ namespace GestionePraticheApiDonini.Services
                 Name = dto.Name,
                 Surname = dto.Surname
             });
+
+            await _praticheDB.SaveChangesAsync();
             insertedId = result.Entity.Id;
 
             return new CreatedPraticaDTO { Id = insertedId };
@@ -49,9 +50,23 @@ namespace GestionePraticheApiDonini.Services
             return await Task.FromResult<DownloadedPraticaDTO>(new DownloadedPraticaDTO { DownloadedFile = file.Attachment });
         }
 
-        public Task<GottenPraticaDTO> GetPratica(GetPraticaDTO dto)
+        public async Task<GottenPraticaDTO> GetPratica(GetPraticaDTO dto)
         {
-            throw new NotImplementedException();
+            var file = _praticheDB.Pratiche.FirstOrDefault(p => p.Id == dto.PraticaId);
+            if (file == null)
+                throw new KeyNotFoundException($"file id not found");
+
+            return await Task.FromResult<GottenPraticaDTO>(new GottenPraticaDTO
+            {
+                PraticaId = file.Id,
+                BirthDate = file.BirthDate,
+                Name = file.Name,
+                Surname = file.Surname,
+                CurrentStatus = file.Status.ToString().ToUpper(),
+                CreatedDate = file.CreatedDate,
+                StartedProcessingDate = file.StartedProcessingDate,
+                CompletedDate = file.CompletedDate
+            });
         }
 
         public async Task<UpdatedPraticaDTO> UpdatePratica(UpdatePraticaDTO dto)
@@ -62,27 +77,28 @@ namespace GestionePraticheApiDonini.Services
             if (fileToUpdate.Status != PraticaStatus.Created)
                 throw new TypeAccessException($"file may not be modified");
 
-            var result = _praticheDB.Pratiche.Update(new Pratica()
-            {
-                Attachment = dto.Attachment ?? fileToUpdate.Attachment,
-                Name = dto.Name ?? fileToUpdate.Name,
-                Surname = dto.Surname ?? fileToUpdate.Surname,
-                BirthDate = dto.BirthDate ?? fileToUpdate.BirthDate
-
-            });
+            fileToUpdate.BirthDate = dto.BirthDate ?? fileToUpdate.BirthDate;
+            fileToUpdate.Name = dto.Name ?? fileToUpdate.Name;
+            fileToUpdate.Surname = dto.Surname ?? fileToUpdate.Surname;
+            var result = _praticheDB.Pratiche.Update(fileToUpdate);
+            await _praticheDB.SaveChangesAsync();
             return await Task.FromResult<UpdatedPraticaDTO>(new UpdatedPraticaDTO { Id = result.Entity.Id });
         }
 
-        private async Task<string> EncodeFile(IFormFile file)
+        public async Task<UpdatedPraticaDTO> UpdateStatus(UpdateStatusDTO dto)
         {
-            var result = new StringBuilder();
-            using (var reader = new StreamReader(file.OpenReadStream()))
-            {
-                while (reader.Peek() >= 0)
-                    result.AppendLine(await reader.ReadLineAsync());
-            }
-            return result.ToString();
+            var fileToUpdate = _praticheDB.Pratiche.FirstOrDefault(p => p.Id == dto.PraticaId);
+            if (fileToUpdate == null)
+                throw new KeyNotFoundException($"file id not found");
+
+
+            fileToUpdate.Status = (PraticaStatus)(int)dto.NewStatus;
+            var result = _praticheDB.Pratiche.Update(fileToUpdate);
+            await _praticheDB.SaveChangesAsync();
+            return await Task.FromResult<UpdatedPraticaDTO>(new UpdatedPraticaDTO { Id = result.Entity.Id });
         }
+
+        #region  private
 
         private static byte[] FileToByte(IFormFile file)
         {
@@ -107,5 +123,7 @@ namespace GestionePraticheApiDonini.Services
                 return ms.ToArray();
             }
         }
+
+        #endregion
     }
 }

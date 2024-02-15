@@ -16,8 +16,8 @@ namespace GestionePraticheApiDonini.Data
         public string Surname { get; set; }
         public PraticaStatus Status { get; set; }
         public DateTime CreatedDate { get; set; }
-        public DateTime StartedProcessingDate { get; set; }
-        public DateTime CompletedDate { get; set; }
+        public DateTime? StartedProcessingDate { get; set; } = null;
+        public DateTime? CompletedDate { get; set; } = null;
     }
 
     public enum PraticaStatus
