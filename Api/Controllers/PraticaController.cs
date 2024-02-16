@@ -2,13 +2,14 @@ using GestionePraticheApiDonini.DTOs.Input;
 using GestionePraticheApiDonini.DTOs.Output;
 using GestionePraticheApiDonini.Requests;
 using GestionePraticheApiDonini.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GestionePraticheApiDonini.Controllers;
 
+[Authorize]
 [ApiController]
-// [Authorize]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class PraticaController : ControllerBase
 {
     private readonly IPraticaService _praticaService;

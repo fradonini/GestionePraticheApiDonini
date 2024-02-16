@@ -21,7 +21,8 @@ namespace GestionePraticheApiDonini.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] LoginRequest loginRequest)
+        [Route("login", Name = nameof(Login))]
+        public IActionResult Login([FromBody] LoginRequest loginRequest)
         {
             //TODO Logic
 
@@ -29,7 +30,7 @@ namespace GestionePraticheApiDonini.Controllers
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var Sectoken = new JwtSecurityToken(_config["Jwt:Issuer"],
-              _config["Jwt:Issuer"],
+              _config["Jwt:Audience"],
               null,
               expires: DateTime.Now.AddMinutes(120),
               signingCredentials: credentials);
