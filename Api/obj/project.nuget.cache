@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "E/lqNy+zc/yIt4pV9xP2fW9VSermVyatKIip0i0tUcoH1yDxB41gWUpa3hEzC+AdjynSbeuR/D2v6RuESJexLg==",
+  "dgSpecHash": "CAZ+8f7ZqbZ4PuYndTvuTkuOlqFocCmXswXth88ymiV7JLEZeBtUlIvxtJ33FfLiDK6wpO8NFPX4MmST5rXjEQ==",
   "success": true,
-  "projectFilePath": "/Users/francescodonini/Documents/Prove/SistemaGestionePraticheDonini/GestionePraticheApiDonini/GestionePraticheApiDonini.csproj",
+  "projectFilePath": "/Users/francescodonini/Documents/Prove/SistemaGestionePraticheDonini/GestionePraticheApiDonini/Api/GestionePraticheApiDonini.csproj",
   "expectedPackageFiles": [
     "/Users/francescodonini/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/francescodonini/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/6.0.0/microsoft.aspnetcore.authentication.jwtbearer.6.0.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/francescodonini/Documents/Prove/SistemaGestionePraticheDonini/GestionePraticheApiDonini/GestionePraticheApiDonini.csproj": {}
+    "/Users/francescodonini/Documents/Prove/SistemaGestionePraticheDonini/GestionePraticheApiDonini/Api/GestionePraticheApiDonini.csproj": {}
   },
   "projects": {
-    "/Users/francescodonini/Documents/Prove/SistemaGestionePraticheDonini/GestionePraticheApiDonini/GestionePraticheApiDonini.csproj": {
+    "/Users/francescodonini/Documents/Prove/SistemaGestionePraticheDonini/GestionePraticheApiDonini/Api/GestionePraticheApiDonini.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/francescodonini/Documents/Prove/SistemaGestionePraticheDonini/GestionePraticheApiDonini/GestionePraticheApiDonini.csproj",
+        "projectUniqueName": "/Users/francescodonini/Documents/Prove/SistemaGestionePraticheDonini/GestionePraticheApiDonini/Api/GestionePraticheApiDonini.csproj",
         "projectName": "GestionePraticheApiDonini",
-        "projectPath": "/Users/francescodonini/Documents/Prove/SistemaGestionePraticheDonini/GestionePraticheApiDonini/GestionePraticheApiDonini.csproj",
+        "projectPath": "/Users/francescodonini/Documents/Prove/SistemaGestionePraticheDonini/GestionePraticheApiDonini/Api/GestionePraticheApiDonini.csproj",
         "packagesPath": "/Users/francescodonini/.nuget/packages/",
-        "outputPath": "/Users/francescodonini/Documents/Prove/SistemaGestionePraticheDonini/GestionePraticheApiDonini/obj/",
+        "outputPath": "/Users/francescodonini/Documents/Prove/SistemaGestionePraticheDonini/GestionePraticheApiDonini/Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/francescodonini/.nuget/NuGet/NuGet.Config"
