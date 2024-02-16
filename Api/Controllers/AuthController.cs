@@ -15,15 +15,18 @@ namespace GestionePraticheApiDonini.Controllers
     public class AuthController : ControllerBase
     {
         private IConfiguration _config;
-        public AuthController(IConfiguration config)
+        private readonly ILogger<AuthController> _logger;
+        public AuthController(IConfiguration config, ILogger<AuthController> logger)
         {
             _config = config;
+            _logger = logger;
         }
 
         [HttpPost]
         [Route("login", Name = nameof(Login))]
         public IActionResult Login([FromBody] LoginRequest loginRequest)
         {
+
             //TODO Logic
 
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));

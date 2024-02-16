@@ -1,0 +1,81 @@
+2024-02-16 13:00:14.899 +01:00  INF  User profile is available. Using '/Users/francescodonini/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-02-16 13:00:15.104 +01:00  FTL  Application startup exceptionSystem.InvalidOperationException: Unable to resolve service for type 'Serilog.Extensions.Hosting.DiagnosticContext' while attempting to activate 'Serilog.AspNetCore.RequestLoggingMiddleware'.
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.<ConfigureApplication>b__27_0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+
+2024-02-16 13:02:03.690 +01:00  INF  User profile is available. Using '/Users/francescodonini/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-02-16 13:02:03.903 +01:00  FTL  Application startup exceptionSystem.InvalidOperationException: Unable to resolve service for type 'Serilog.Extensions.Hosting.DiagnosticContext' while attempting to activate 'Serilog.AspNetCore.RequestLoggingMiddleware'.
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.<ConfigureApplication>b__27_0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+
+2024-02-16 13:03:00.288 +01:00  INF  User profile is available. Using '/Users/francescodonini/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-02-16 13:03:00.832 +01:00  INF  Now listening on: https://localhost:7154
+2024-02-16 13:03:00.837 +01:00  INF  Now listening on: http://localhost:5089
+2024-02-16 13:03:00.941 +01:00  INF  Application started. Press Ctrl+C to shut down.
+2024-02-16 13:03:00.943 +01:00  INF  Hosting environment: Development
+2024-02-16 13:03:00.944 +01:00  INF  Content root path: /Users/francescodonini/Documents/Prove/SistemaGestionePraticheDonini/GestionePraticheApiDonini/Api/
+2024-02-16 13:03:41.813 +01:00  INF  User profile is available. Using '/Users/francescodonini/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-02-16 13:03:42.338 +01:00  INF  Now listening on: https://localhost:7154
+2024-02-16 13:03:42.405 +01:00  INF  Now listening on: http://localhost:5089
+2024-02-16 13:03:42.482 +01:00  INF  Application started. Press Ctrl+C to shut down.
+2024-02-16 13:03:42.484 +01:00  INF  Hosting environment: Development
+2024-02-16 13:03:42.485 +01:00  INF  Content root path: /Users/francescodonini/Documents/Prove/SistemaGestionePraticheDonini/GestionePraticheApiDonini/Api/
+2024-02-16 13:04:03.246 +01:00  INF  User profile is available. Using '/Users/francescodonini/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-02-16 13:04:03.810 +01:00  INF  Now listening on: https://localhost:7154
+2024-02-16 13:04:03.815 +01:00  INF  Now listening on: http://localhost:5089
+2024-02-16 13:04:03.962 +01:00  INF  Application started. Press Ctrl+C to shut down.
+2024-02-16 13:04:03.964 +01:00  INF  Hosting environment: Development
+2024-02-16 13:04:03.965 +01:00  INF  Content root path: /Users/francescodonini/Documents/Prove/SistemaGestionePraticheDonini/GestionePraticheApiDonini/Api/
+2024-02-16 13:05:58.065 +01:00  INF  User profile is available. Using '/Users/francescodonini/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-02-16 13:05:58.653 +01:00  INF  Now listening on: https://localhost:7154
+2024-02-16 13:05:58.657 +01:00  INF  Now listening on: http://localhost:5089
+2024-02-16 13:05:58.778 +01:00  INF  Application started. Press Ctrl+C to shut down.
+2024-02-16 13:05:58.779 +01:00  INF  Hosting environment: Development
+2024-02-16 13:05:58.780 +01:00  INF  Content root path: /Users/francescodonini/Documents/Prove/SistemaGestionePraticheDonini/GestionePraticheApiDonini/Api/
+2024-02-16 13:06:43.907 +01:00  INF  User profile is available. Using '/Users/francescodonini/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-02-16 13:06:44.408 +01:00  INF  Now listening on: https://localhost:7154
+2024-02-16 13:06:44.413 +01:00  INF  Now listening on: http://localhost:5089
+2024-02-16 13:06:44.550 +01:00  INF  Application started. Press Ctrl+C to shut down.
+2024-02-16 13:06:44.552 +01:00  INF  Hosting environment: Development
+2024-02-16 13:06:44.553 +01:00  INF  Content root path: /Users/francescodonini/Documents/Prove/SistemaGestionePraticheDonini/GestionePraticheApiDonini/Api/
+2024-02-16 13:07:47.919 +01:00  INF  Request starting HTTP/1.1 GET https://localhost:7154/api/Pratica/1 - -
+2024-02-16 13:07:48.487 +01:00  INF  Executing endpoint 'GestionePraticheApiDonini.Controllers.PraticaController.GetPratica (GestionePraticheApiDonini)'
+2024-02-16 13:07:48.568 +01:00  INF  Route matched with {action = "GetPratica", controller = "Pratica"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPratica(Int32) on controller GestionePraticheApiDonini.Controllers.PraticaController (GestionePraticheApiDonini).
+2024-02-16 13:07:57.976 +01:00  INF  Executing OkObjectResult, writing value of type 'GestionePraticheApiDonini.DTOs.Output.GottenPraticaDTO'.
+2024-02-16 13:07:58.198 +01:00  INF  Executed action GestionePraticheApiDonini.Controllers.PraticaController.GetPratica (GestionePraticheApiDonini) in 9620.3115ms
+2024-02-16 13:07:58.205 +01:00  INF  Executed endpoint 'GestionePraticheApiDonini.Controllers.PraticaController.GetPratica (GestionePraticheApiDonini)'
+2024-02-16 13:07:58.226 +01:00  INF  Request finished HTTP/1.1 GET https://localhost:7154/api/Pratica/1 - - - 200 - application/json;+charset=utf-8 10314.3285ms
+2024-02-16 13:08:07.965 +01:00  INF  Request starting HTTP/1.1 GET https://localhost:7154/api/Pratica/6 - -
+2024-02-16 13:08:07.983 +01:00  INF  Executing endpoint 'GestionePraticheApiDonini.Controllers.PraticaController.GetPratica (GestionePraticheApiDonini)'
+2024-02-16 13:08:07.985 +01:00  INF  Route matched with {action = "GetPratica", controller = "Pratica"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPratica(Int32) on controller GestionePraticheApiDonini.Controllers.PraticaController (GestionePraticheApiDonini).
+2024-02-16 13:08:18.827 +01:00  INF  PraticaController - UpdatePratica : file id not found
+2024-02-16 13:08:23.034 +01:00  INF  Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-02-16 13:08:23.038 +01:00  INF  Executed action GestionePraticheApiDonini.Controllers.PraticaController.GetPratica (GestionePraticheApiDonini) in 15051.3221ms
+2024-02-16 13:08:23.038 +01:00  INF  Executed endpoint 'GestionePraticheApiDonini.Controllers.PraticaController.GetPratica (GestionePraticheApiDonini)'
+2024-02-16 13:08:23.040 +01:00  INF  Request finished HTTP/1.1 GET https://localhost:7154/api/Pratica/6 - - - 400 - text/plain;+charset=utf-8 15074.8254ms
+2024-02-16 13:10:43.205 +01:00  INF  User profile is available. Using '/Users/francescodonini/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-02-16 13:10:43.783 +01:00  INF  Now listening on: https://localhost:7154
+2024-02-16 13:10:43.855 +01:00  INF  Now listening on: http://localhost:5089
+2024-02-16 13:10:43.940 +01:00  INF  Application started. Press Ctrl+C to shut down.
+2024-02-16 13:10:43.942 +01:00  INF  Hosting environment: Development
+2024-02-16 13:10:43.943 +01:00  INF  Content root path: /Users/francescodonini/Documents/Prove/SistemaGestionePraticheDonini/GestionePraticheApiDonini/Api/
+2024-02-16 13:10:45.111 +01:00  INF  Request starting HTTP/1.1 GET https://localhost:7154/ - -
+2024-02-16 13:10:45.370 +01:00  INF  Request finished HTTP/1.1 GET https://localhost:7154/ - - - 404 0 - 264.5705ms
+2024-02-16 13:11:00.637 +01:00  INF  Request starting HTTP/1.1 GET https://localhost:7154/api/Pratica/6 - -
+2024-02-16 13:11:00.995 +01:00  INF  Executing endpoint 'GestionePraticheApiDonini.Controllers.PraticaController.GetPratica (GestionePraticheApiDonini)'
+2024-02-16 13:11:01.084 +01:00  INF  Route matched with {action = "GetPratica", controller = "Pratica"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPratica(Int32) on controller GestionePraticheApiDonini.Controllers.PraticaController (GestionePraticheApiDonini).
+2024-02-16 13:11:14.481 +01:00  INF  PraticaController - UpdatePratica : file id not found
+2024-02-16 13:11:18.127 +01:00  INF  Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-02-16 13:11:18.144 +01:00  INF  Executed action GestionePraticheApiDonini.Controllers.PraticaController.GetPratica (GestionePraticheApiDonini) in 17049.3236ms
+2024-02-16 13:11:18.152 +01:00  INF  Executed endpoint 'GestionePraticheApiDonini.Controllers.PraticaController.GetPratica (GestionePraticheApiDonini)'
+2024-02-16 13:11:18.169 +01:00  INF  Request finished HTTP/1.1 GET https://localhost:7154/api/Pratica/6 - - - 400 - text/plain;+charset=utf-8 17532.2132ms

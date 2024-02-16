@@ -58,10 +58,12 @@ public class PraticaController : ControllerBase
         }
         catch (KeyNotFoundException kEx)
         {
+            _logger.LogInformation($"{nameof(PraticaController)} - {nameof(UpdatePratica)} : {kEx.Message}");
             return BadRequest(kEx.Message);
         }
         catch (TypeAccessException tEx)
         {
+            _logger.LogInformation($"{nameof(PraticaController)} - {nameof(UpdatePratica)} : {tEx.Message}");
             return BadRequest(tEx.Message);
         }
 
@@ -83,6 +85,7 @@ public class PraticaController : ControllerBase
         }
         catch (KeyNotFoundException kEx)
         {
+            _logger.LogInformation($"{nameof(PraticaController)} - {nameof(UpdatePratica)} : {kEx.Message}");
             return BadRequest(kEx.Message);
         }
 
@@ -104,6 +107,7 @@ public class PraticaController : ControllerBase
         }
         catch (KeyNotFoundException kEx)
         {
+            _logger.LogInformation($"{nameof(PraticaController)} - {nameof(UpdatePratica)} : {kEx.Message}");
             return BadRequest(kEx.Message);
         }
 
@@ -129,6 +133,7 @@ public class PraticaController : ControllerBase
         }
         catch (KeyNotFoundException kEx)
         {
+            _logger.LogInformation($"{nameof(PraticaController)} - {nameof(UpdatePratica)} : {kEx.Message}");
             return BadRequest(kEx.Message);
         }
 
