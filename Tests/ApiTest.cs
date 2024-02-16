@@ -3,8 +3,6 @@ using FakeItEasy;
 using GestionePraticheApiDonini.Data;
 using GestionePraticheApiDonini.DTOs.Input;
 using GestionePraticheApiDonini.DTOs.Output;
-using GestionePraticheApiDonini.Infrastructure;
-using GestionePraticheApiDonini.Services;
 using GestionePraticheApiDonini.Services.Interfaces;
 
 namespace Tests;
@@ -24,16 +22,15 @@ public class ApiTest
     {
         // Arrange
         var praticaDTO = new GetPraticaDTO { PraticaId = 100 };
-        var gottenPraticaDTO = new GottenPraticaDTO
-        {
-            Name = "Francesco",
-            Surname = "Donini",
-            BirthDate = DateTime.Now.AddHours(-30),
-            PraticaId = 100,
-            CreatedDate = DateTime.Now.AddYears(-2),
-            StartedProcessingDate = DateTime.Now.AddYears(-1),
-            CurrentStatus = PraticaStatus.Processing.ToString()
-        };
+        var gottenPraticaDTO = new Faker<GottenPraticaDTO>()
+            .RuleFor(x => x.Name, f => f.Person.FirstName)
+            .RuleFor(x => x.Surname, f => f.Person.LastName)
+            .RuleFor(x => x.BirthDate, f => f.Person.DateOfBirth)
+            .RuleFor(x => x.PraticaId, f => 100)
+            .RuleFor(x => x.CreatedDate, f => f.Date.Past(2))
+            .RuleFor(x => x.StartedProcessingDate, f => f.Date.Past(1))
+            .RuleFor(x => x.CurrentStatus, f => PraticaStatus.Created.ToString());
+
         A.CallTo(() => _service.GetPratica(praticaDTO))
          .Returns(gottenPraticaDTO);
 
@@ -49,16 +46,15 @@ public class ApiTest
     {
         // Arrange
         var praticaDTO = new GetPraticaDTO { PraticaId = 100 };
-        var gottenPraticaDTO = new GottenPraticaDTO
-        {
-            Name = "Francesco",
-            Surname = "Donini",
-            BirthDate = DateTime.Now.AddHours(-30),
-            PraticaId = 100,
-            CreatedDate = DateTime.Now.AddYears(-2),
-            StartedProcessingDate = DateTime.Now.AddYears(-1),
-            CurrentStatus = PraticaStatus.Processing.ToString()
-        };
+        var gottenPraticaDTO = new Faker<GottenPraticaDTO>()
+            .RuleFor(x => x.Name, f => f.Person.FirstName)
+            .RuleFor(x => x.Surname, f => f.Person.LastName)
+            .RuleFor(x => x.BirthDate, f => f.Person.DateOfBirth)
+            .RuleFor(x => x.PraticaId, f => 100)
+            .RuleFor(x => x.CreatedDate, f => f.Date.Past(2))
+            .RuleFor(x => x.StartedProcessingDate, f => f.Date.Past(1))
+            .RuleFor(x => x.CurrentStatus, f => PraticaStatus.Created.ToString());
+
         A.CallTo(() => _service.GetPratica(praticaDTO))
          .Throws<KeyNotFoundException>();
 
@@ -68,4 +64,6 @@ public class ApiTest
         // Assert
         await Assert.ThrowsAsync<KeyNotFoundException>(invocation);
     }
+
+    //TODO Test remaing service methods
 }

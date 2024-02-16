@@ -50,7 +50,7 @@ namespace GestionePraticheApiDonini.Services
 
         public async Task<GottenPraticaDTO> GetPratica(GetPraticaDTO dto)
         {
-            var file = _praticheDB.Pratiche.Find(dto.PraticaId);
+            var file = _praticheDB.Pratiche.FirstOrDefault(p => p.Id == dto.PraticaId);
             if (file == null)
                 throw new KeyNotFoundException($"file id not found");
 
