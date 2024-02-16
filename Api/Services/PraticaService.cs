@@ -14,10 +14,8 @@ namespace GestionePraticheApiDonini.Services
     public class PraticaService : IPraticaService
     {
         private readonly PraticheDB _praticheDB;
-        private readonly ILogger<PraticaService> _logger;
-        public PraticaService(ILogger<PraticaService> logger, PraticheDB praticheDB)
+        public PraticaService(PraticheDB praticheDB)
         {
-            _logger = logger;
             _praticheDB = praticheDB;
         }
         public async Task<CreatedPraticaDTO> CreatePratica(CreatePraticaDTO dto)
@@ -52,7 +50,7 @@ namespace GestionePraticheApiDonini.Services
 
         public async Task<GottenPraticaDTO> GetPratica(GetPraticaDTO dto)
         {
-            var file = _praticheDB.Pratiche.FirstOrDefault(p => p.Id == dto.PraticaId);
+            var file = _praticheDB.Pratiche.Find(dto.PraticaId);
             if (file == null)
                 throw new KeyNotFoundException($"file id not found");
 
